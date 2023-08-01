@@ -1,0 +1,85 @@
+
+Texto:
+Igual: { name: "exemplo" }
+Diferente: { NOT: { name: "exemplo" } }
+Começa com: { name: { startsWith: "ex" } }
+Termina com: { name: { endsWith: "teste" } }
+Preenchido: { NOT: { name: null } }
+Contido: { name: { contains: "exemplo" } }
+Não contido: { NOT: { name: { contains: "exemplo" } } }
+
+Número:
+Igual: { price: 100 }
+Diferente: { NOT: { price: 100 } }
+Preenchido: { NOT: { price: null } }
+Maior que: { price: { gt: 50 } }
+Maior ou igual a: { price: { gte: 50 } }
+Menor que: { price: { lt: 200 } }
+Menor ou igual a: { price: { lte: 200 } }
+Contido: { price: { in: [100, 200, 300] } }
+Não contido: { NOT: { price: { in: [100, 200, 300] } } }
+
+Boolean:
+Igual: { isAvailable: true }
+Preenchido: { NOT: { isAvailable: null } }
+
+Data:
+Igual: { date: "2023-07-21T00:00:00.000Z" }
+Diferente: { NOT: { date: "2023-07-21T00:00:00.000Z" } }
+Preenchido: { NOT: { date: null } }
+Maior que: { date: { gt: "2023-07-21T00:00:00.000Z" } }
+Maior ou igual a: { date: { gte: "2023-07-21T00:00:00.000Z" } }
+Menor que: { date: { lt: "2023-07-21T00:00:00.000Z" } }
+Menor ou igual a: { date: { lte: "2023-07-21T00:00:00.000Z" } }
+Entre (por exemplo, entre 2023-07-21 e 2023-07-30):
+{ date: { gte: "2023-07-21T00:00:00.000Z", lte: "2023-07-30T00:00:00.000Z" } }
+
+Lista:
+Contido: { tags: { has: "tag1" } }
+Não contido: { NOT: { tags: { has: "tag1" } } }
+Preenchido: { NOT: { tags: null } }
+
+
+# Texto
+igual -> =
+diferente -> !=
+comeca com -> %$
+termina com -> $%
+prenchido -> !!$
+não prenchido -> !$
+contido -> $,$
+não contido -> !$,$
+
+# Número
+igual -> =
+diferente -> !=
+prenchido -> !!$
+não prenchido -> !$
+maior que -> $>%
+maior ou igual á -> $>=%
+menor que -> $<%
+menor ou igual á -> $<=%
+contido -> $,$
+não contido -> !$,$
+
+# Boolean
+igual -> =
+prenchido -> !!$
+não prenchido -> !$
+
+# Data
+igual -> =
+diferente -> !=
+prenchido -> !!$
+não prenchido -> !$
+maior que -> $>%
+maior ou igual á -> $>=%
+menor que -> $<%
+menor ou igual á -> $<=%
+entre -> %>$<%
+
+# Lista
+contido -> $,$
+não contido -> !$,$
+prenchido -> !!$
+não prenchido -> !$
